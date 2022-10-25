@@ -1,12 +1,14 @@
 plugins {
-    id 'org.springframework.boot' version '2.7.4'
-    id 'io.spring.dependency-management' version '1.0.14.RELEASE'
+    id 'org.springframework.boot' version '2.6.7'
+    id 'io.spring.dependency-management' version '1.0.12.RELEASE'
     id 'java'
 }
 
 group = 'com.konai.hsyang'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
+
+apply plugin: "io.spring.dependency-management"
 
 configurations {
     compileOnly {
@@ -16,6 +18,10 @@ configurations {
 
 repositories {
     mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
 }
 
 dependencies {
@@ -51,6 +57,14 @@ dependencies {
     testImplementation 'org.springframework.security:spring-security-test'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.6.0'
+}
+
+clean {
+    delete file('src/main/generated')
+}
+
+task cleanGeneratedDir(type: Delete) {
+    delete file('src/main/generated')
 }
 
 tasks.named('test') {
