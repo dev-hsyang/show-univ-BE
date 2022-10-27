@@ -4,6 +4,7 @@ import com.konai.hsyang.konatoybe.commentsWebApi.repository.CommentsRepository;
 import com.konai.hsyang.konatoybe.postsWebApi.domain.Posts;
 import com.konai.hsyang.konatoybe.postsWebApi.dto.PageRequestDto;
 import com.konai.hsyang.konatoybe.postsWebApi.dto.PostsListResponseDto;
+import com.konai.hsyang.konatoybe.postsWebApi.dto.QPostsListResponseDto;
 import com.querydsl.core.types.Order;
 import com.querydsl.core.types.OrderSpecifier;
 import com.querydsl.core.types.dsl.BooleanExpression;
@@ -14,6 +15,8 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
+
+import static com.konai.hsyang.konatoybe.postsWebApi.domain.QPosts.*;
 
 import java.util.List;
 

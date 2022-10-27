@@ -1,11 +1,13 @@
 package com.konai.hsyang.konatoybe.commentsWebApi.repository;
 
 import com.konai.hsyang.konatoybe.commentsWebApi.dto.CommentsResponseDto;
+import com.konai.hsyang.konatoybe.commentsWebApi.dto.QCommentsResponseDto;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
+
+import static com.konai.hsyang.konatoybe.commentsWebApi.domain.QComments.*;
 
 @RequiredArgsConstructor
 @Repository
