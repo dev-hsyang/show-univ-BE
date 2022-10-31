@@ -6,10 +6,7 @@ import com.konai.hsyang.konatoybe.loginWebApi.service.UserService;
 import com.konai.hsyang.konatoybe.postsWebApi.dto.PostsResponseDto;
 import com.konai.hsyang.konatoybe.postsWebApi.service.PostsService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
@@ -24,10 +21,16 @@ public class PostsWebApi {
         postsService.updateHits(id);
     }
 
-    @GetMapping("/api/posts-dto/{id}")
+    @GetMapping("/api/posts/dto/{id}")
     public PostsResponseDto postsResponseDto(@PathVariable Long id){
 
         return postsService.postsResponseDtoFindById(id);
+    }
+
+    @PostMapping("/api/posts/{id}")
+    public boolean isPostAuthor(@PathVariable Long id, @RequestBody PostsResponseDto dto){
+
+        return postsService.isPostAuthor(id, dto);
     }
 
 
