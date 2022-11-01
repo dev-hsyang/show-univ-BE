@@ -20,11 +20,11 @@ public class LoginWebApi {
         return userService.findByUsername(username);
     }
 
-    @GetMapping("/api/v2/user/{id}")
-    public User findById(@PathVariable Long userID){
-
-        return userService.findById(userID);
-    }
+//    @GetMapping("/api/v2/user/{id}")
+//    public User findById(@PathVariable Long userID){
+//
+//        return userService.findById(userID);
+//    }
 
     @PostMapping("/api/v2/join")
     public Long join(@RequestBody UserJoinRequestDto requestDto){
