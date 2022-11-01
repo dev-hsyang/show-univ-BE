@@ -18,4 +18,10 @@ public class UserWebApi {
 
         return userService.findByUsername(username);
     }
+
+    @GetMapping("/api/user/{id}")
+    public User findById(@PathVariable Long userID){
+
+        return userService.findById(userID);
+    }
 }

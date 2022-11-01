@@ -35,6 +35,11 @@ public class UserService {
         return userRepository.save(requestDto.toEntity()).getUserID();
     }
 
+    public User findById(Long userID){
+
+        return userRepository.findById(userID).orElseThrow(() -> new NoUserFoundException());
+    }
+
     public User findByUsername(String name){
 
         return userRepository.findByUsername(name).orElseThrow(() -> new NoUserFoundException());

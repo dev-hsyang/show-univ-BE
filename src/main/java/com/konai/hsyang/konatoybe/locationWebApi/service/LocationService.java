@@ -1,6 +1,7 @@
 package com.konai.hsyang.konatoybe.locationWebApi.service;
 
 import com.konai.hsyang.konatoybe.exceptions.NoLocationFoundException;
+import com.konai.hsyang.konatoybe.locationWebApi.domain.Location;
 import com.konai.hsyang.konatoybe.locationWebApi.dto.LocationResponseDto;
 import com.konai.hsyang.konatoybe.locationWebApi.dto.LocationSaveRequestDto;
 import com.konai.hsyang.konatoybe.locationWebApi.repository.LocationRepository;
@@ -14,6 +15,11 @@ public class LocationService {
 
     private final LocationRepository locationRepository;
 
+
+    public Location findById(Long id){
+
+        return locationRepository.findById(id).orElseThrow(() -> new NoLocationFoundException());
+    }
     @Transactional
     public Long save(LocationSaveRequestDto requestDto) {
 
@@ -26,7 +32,7 @@ public class LocationService {
         locationRepository.delete(locationRepository.findById(id).orElseThrow(() -> new NoLocationFoundException()));
     }
 
-    public LocationResponseDto findByID(Long id) {
+    public LocationResponseDto responseDtoFindByID(Long id) {
 
         return new LocationResponseDto(locationRepository.findById(id).orElseThrow(() -> new NoLocationFoundException()));
     }
