@@ -4,6 +4,7 @@ import com.konai.hsyang.konatoybe.locationWebApi.dto.LocationSaveRequestDto;
 import com.konai.hsyang.konatoybe.locationWebApi.service.LocationService;
 import com.konai.hsyang.konatoybe.loginWebApi.domain.User;
 import com.konai.hsyang.konatoybe.loginWebApi.service.UserService;
+import com.konai.hsyang.konatoybe.postsWebApi.domain.Posts;
 import com.konai.hsyang.konatoybe.postsWebApi.dto.*;
 import com.konai.hsyang.konatoybe.postsWebApi.service.PostsService;
 import lombok.RequiredArgsConstructor;
@@ -31,9 +32,9 @@ public class PostsWebApi {
     }
 
     @GetMapping("/api/v2/posts/{id}")
-    public PostsResponseDto postFindById(@PathVariable Long id){
+    public Posts postFindById(@PathVariable Long id){
 
-        return postsService.postsResponseDtoFindById(id);
+        return postsService.findById(id);
     }
 
     @PostMapping("/api/v2/posts/update/{id}")
