@@ -46,4 +46,10 @@ public class CommentsWebApi {
         return commentsService.getPostID(commentID);
     }
 
+    @GetMapping("/api/v2/comments/{userID}")
+    public List<CommentsResponseDto> findAllByUserId(@PathVariable Long userID){
+
+        return commentsService.findAllByUserId(userID);
+    }
+
 }

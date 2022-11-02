@@ -106,4 +106,10 @@ public class PostsWebApi {
         return postsService.findAllDescLikes();
     }
 
+    @GetMapping("/api/v2/posts/id/{userID}")
+    public List<PostsListResponseDto> findAllDescById(@PathVariable Long userID){
+
+        return postsService.findAllDescById(userID);
+    }
+
 }
