@@ -76,6 +76,18 @@ public class PostsWebApi {
         return postsService.isPostAuthor(id, dto);
     }
 
+    @PostMapping("/api/v2/posts/author")
+    public void setPostAuthor(@RequestBody PostsSaveRequestDto requestDto, @RequestParam("userID") Long userID){
+
+        postsService.setPostAuthor(requestDto, userID);
+    }
+
+    @PostMapping("/api/v2/posts/location")
+    public void setLocation(@RequestBody PostsSaveRequestDto requestDto, @RequestParam("locationID") Long locationID){
+
+        postsService.setLocation(requestDto, locationID);
+    }
+
     @GetMapping("/api/v2/posts/current")
     public List<PostsListResponseDto> findAllDescCurrent(){
 
