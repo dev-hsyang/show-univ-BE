@@ -76,4 +76,14 @@ public class FileService {
 
         fileRepository.deleteById(fileID);
     }
+
+    public com.konai.hsyang.konatoybe.fileWebApi.domain.File save(FileSaveRequestDto requestDto){
+
+        return fileRepository.save(requestDto.toEntity());
+    }
+
+    public com.konai.hsyang.konatoybe.fileWebApi.domain.File findById(Long fileID){
+
+        return fileRepository.findById(fileID).orElseThrow(() -> new NoFileFoundException());
+    }
 }
