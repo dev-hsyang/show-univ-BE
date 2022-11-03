@@ -2,12 +2,18 @@ package com.konai.hsyang.konatoybe.commentsWebServer.dto;
 
 import com.konai.hsyang.konatoybe.commentsWebServer.domain.Comments;
 import com.querydsl.core.annotations.QueryProjection;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Getter
 public class CommentsResponseDto {
 

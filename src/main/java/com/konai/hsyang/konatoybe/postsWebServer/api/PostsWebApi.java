@@ -70,7 +70,7 @@ public class PostsWebApi {
         return postsService.postsResponseDtoFindById(id);
     }
 
-    @PostMapping("/api/v2/posts/{id}")
+    @PostMapping("/api/v2/posts/author/{id}")
     public boolean isPostAuthor(@PathVariable Long id, @RequestBody PostsResponseDto dto){
 
         return postsService.isPostAuthor(id, dto);
