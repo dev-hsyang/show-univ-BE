@@ -54,6 +54,7 @@ public class CommentsService {
         for(CommentsResponseDto dto : list) {
             dto.setFlag(nickname.equals(dto.getNickname()) ? true : false);
         }
+
         return list;
     }
 

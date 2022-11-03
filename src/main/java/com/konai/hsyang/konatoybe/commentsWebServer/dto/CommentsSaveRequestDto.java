@@ -20,8 +20,7 @@ public class CommentsSaveRequestDto {
     private String content;
     private User user;
     private Posts post;
-    private LocalDateTime createdate;
-    private LocalDateTime modifieddate;
+
 
     public Comments toEntity() {
         return Comments.builder()
