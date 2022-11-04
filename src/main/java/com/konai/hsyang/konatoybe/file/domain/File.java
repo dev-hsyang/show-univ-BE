@@ -1,5 +1,6 @@
 package com.konai.hsyang.konatoybe.file.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.konai.hsyang.konatoybe.posts.domain.Posts;
 import com.konai.hsyang.konatoybe.posts.etc.BaseTimeEntity;
 import lombok.Builder;
@@ -17,6 +18,7 @@ public class File extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long fileID;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "posts")
     private Posts posts;

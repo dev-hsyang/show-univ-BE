@@ -1,5 +1,6 @@
 package com.konai.hsyang.konatoybe.posts.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.konai.hsyang.konatoybe.comments.domain.Comments;
 import com.konai.hsyang.konatoybe.file.domain.File;
 import com.konai.hsyang.konatoybe.location.domain.Location;
@@ -33,6 +34,7 @@ public class Posts extends BaseTimeEntity {
     @OneToMany(mappedBy = "post", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     private List<Comments> comments;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "posts", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<File> file;
 
